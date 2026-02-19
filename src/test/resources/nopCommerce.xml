@@ -5,8 +5,7 @@
         <listener class-name="commons.MethodListener"/>
 
     </listeners>
-    <parameter name="userUrl" value="https://demo.nopcommerce.com/"/>
-    <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"/>
+    <parameter name="userUrl" value="https://www.facebook.com/"/>
 
     <test name="Run on FireFox">
         <parameter name="browser" value="firefox"/>
