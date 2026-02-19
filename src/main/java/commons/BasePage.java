@@ -13,8 +13,6 @@ import pageObjects.nopCommerce.users.UserOrderPO;
 import pageObjects.nopCommerce.users.UserRewardPointPO;
 import pageUIs.nopCommerce.BasePageUI;
 import pageUIs.nopCommerce.users.UserSidebarPageUI;
-import pageUIs.orangehrm.BasePUI;
-import pageUIs.orangehrm.pim.employee.PersonalDetailsPUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -208,7 +206,7 @@ public class BasePage {
         return new Select(getElement(driver, locator)).isMultiple();
     }
 
-    public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childItemLocator, String expectedItem)  {
+    public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childItemLocator, String expectedItem) {
         driver.findElement(getByLocator(parentLocator)).click();
         sleepInSecond(2);
         List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
@@ -374,7 +372,7 @@ public class BasePage {
         sleepInSeconds(3);
     }
 
-    public void clickToElementByJS(WebDriver driver, String locator, String...restParameter) throws InterruptedException {
+    public void clickToElementByJS(WebDriver driver, String locator, String... restParameter) throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, castParameter(locator, restParameter)));
         sleepInSeconds(3);
     }
@@ -437,7 +435,7 @@ public class BasePage {
                 .until(ExpectedConditions.attributeToBe(getByLocator(locator), attributeName, attributeValue));
     }
 
-    public void waitForElementAttribute(WebDriver driver, String locator, String attributeName, String attributeValue,String... restParameter) {
+    public void waitForElementAttribute(WebDriver driver, String locator, String attributeName, String attributeValue, String... restParameter) {
         new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
                 .until(ExpectedConditions.attributeToBe(getByLocator(castParameter(locator, restParameter)), attributeName, attributeValue));
     }
@@ -554,15 +552,5 @@ public class BasePage {
     public boolean isCheckboxByIDSelected(WebDriver driver, String checkboxID) {
         waitForElementSelected(driver, BasePageUI.CHECKBOX_BY_ID, checkboxID);
         return isElementSelected(driver, BasePageUI.CHECKBOX_BY_ID, checkboxID);
-    }
-
-    //Only use for OrangeHRM project
-    public void waitAllLoadingIconInvisible(WebDriver driver) {
-        waitForListElementVisible(driver, BasePUI.LOADING_ICON);
-    }
-
-    public boolean isSuccessMessageIsDisplayed(WebDriver driver) {
-        waitForElementVisible(driver, BasePUI.SUCCESS_MESSAGE);
-        return isElementDisplayed(driver, BasePUI.SUCCESS_MESSAGE);
     }
 }

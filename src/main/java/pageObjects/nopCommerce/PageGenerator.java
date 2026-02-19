@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.nopCommerce.admin.AdminDashboardPO;
 import pageObjects.nopCommerce.admin.AdminLoginPO;
 import pageObjects.nopCommerce.users.*;
-import pageObjects.orangehrm.pim.employee.PersonalDetailsPO;
+
 
 public class PageGenerator {
     public static UserHomePO getUserHomePage(WebDriver driver) {
