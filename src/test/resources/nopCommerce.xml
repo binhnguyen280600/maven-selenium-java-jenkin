@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="NopCommerce UI Automation" verbose="1">
+
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="reportConfigs.AllureListener"/>
+    </listeners>
+    <parameter name="userUrl" value="https://demo.nopcommerce.com/"/>
+    <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"/>
+
+    <test name="Run on FireFox">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="server" value="dev"/>
+        <classes>
+            <class name="com.nopcommerce.users.Level_01_Repeat_Yourself"/>
+        </classes>
+    </test>
+
+<!--    <test name="Run on Chrome">-->
+<!--        <parameter name="browser" value="chrome" />-->
+<!--        <classes>-->
+<!--            <class name="com.nopcommerce.users.Level_21_Browser_Config"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
