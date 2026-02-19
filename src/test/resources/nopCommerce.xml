@@ -3,7 +3,7 @@
 
     <listeners>
         <listener class-name="commons.MethodListener"/>
-        <listener class-name="reportConfigs.AllureListener"/>
+
     </listeners>
     <parameter name="userUrl" value="https://demo.nopcommerce.com/"/>
     <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"/>
